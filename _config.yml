@@ -1,12 +1,121 @@
-title: "Il mio sito di test"
-description: "Sito Jekyll con tema Minimal Mistakes"
-theme: minimal-mistakes-jekyll
+title                   : "TestLab Site"
+subtitle                : "We can put a sub title here"
+description             : "Here we will put the short description of our project"
+locale                   : "en-US"
+url                      : "http://localhost:4000" # Cambia in produzione
+baseurl                  : "" # Se pubblichi su GitHub Pages in root, lascia vuoto
+repository               : "GitForTest3141592/SiteTest" # Inserito
+logo                     : "/assets/images/Logo.png"
+teaser                   : "/assets/images/G3.png"
+masthead_title           : " " # Nessun titolo grande in alto
+title_separator          : "-"
+minimal_mistakes_skin    : "default"
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-include-cache
-
+# SEO + Plugin
 markdown: kramdown
 highlighter: rouge
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Social
+social:
+  type: Person
+  name: "TestLab Team"
+  links:
+    - "https://github.com/GitForTest3141592"
+    - "mailto:your@email.com"
+
+# Author
+author:
+  name     : "TestLab Authors"
+  avatar   : "/assets/images/avatar.png"
+  bio      : "bio"
+  location : "Everywhere"
+  email    : "your@email.com"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:your@email.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/GitForTest3141592"
+
+# Footer Links
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/GitForTest3141592"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:your@email.com"
+
+# Layout e struttura
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+
+# Include/Exclude
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# Markdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Categorie e Tag
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Navigazione
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Fourier Transform"
+    url: "/Fourier-Transform/"
+  - title: "About"
+    url: "/about/"
+  - title: "Contact"
+    url: "/contact/"
+
+# Defaults per post
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
